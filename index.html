@@ -7,15 +7,10 @@
 <title>Bhana Digital Platform</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
+font-family:Arial,sans-serif;
 background:#f7f8fc;
 color:#171717;
 }
@@ -26,29 +21,29 @@ padding:18px 6%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
 position:sticky;
 top:0;
 z-index:10;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
 }
 
 .logo{
-font-size:24px;
+font-size:25px;
 font-weight:bold;
 color:#6c4cff;
 }
 
 nav a{
 text-decoration:none;
-margin-left:22px;
 color:#222;
+margin-left:20px;
 font-weight:bold;
 }
 
 .hero{
-padding:80px 7%;
+padding:85px 7%;
 text-align:center;
-background:linear-gradient(135deg,#eeeaff,#ffffff);
+background:linear-gradient(135deg,#eeeaff,#fff);
 }
 
 .hero h1{
@@ -68,7 +63,7 @@ margin-bottom:25px;
 
 .btn{
 display:inline-block;
-padding:14px 24px;
+padding:14px 25px;
 background:#6c4cff;
 color:white;
 text-decoration:none;
@@ -82,8 +77,8 @@ padding:60px 7%;
 
 .section h2{
 font-size:32px;
-margin-bottom:30px;
 text-align:center;
+margin-bottom:30px;
 }
 
 .products{
@@ -95,34 +90,36 @@ gap:22px;
 .product{
 background:white;
 padding:20px;
-border-radius:16px;
+border-radius:18px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
 text-align:center;
 }
 
-.product .photo{
+.photo{
 height:160px;
 background:#eeeeee;
 border-radius:12px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:50px;
+font-size:55px;
 margin-bottom:15px;
 }
 
 .product h3{
+font-size:21px;
 margin-bottom:8px;
 }
 
 .product p{
 color:#666;
 margin-bottom:15px;
+line-height:1.5;
 }
 
 .buy{
 display:inline-block;
-padding:10px 18px;
+padding:11px 20px;
 background:#171717;
 color:white;
 text-decoration:none;
@@ -133,34 +130,35 @@ border-radius:8px;
 background:#151515;
 color:white;
 text-align:center;
-padding:50px 7%;
+padding:55px 7%;
+}
+
+.about h2{
+margin-bottom:12px;
 }
 
 .about p{
-margin-top:12px;
 color:#ccc;
+line-height:1.6;
 }
 
 footer{
+background:white;
 text-align:center;
 padding:25px;
-background:white;
 color:#777;
 }
 
 @media(max-width:600px){
-
 .hero h1{
 font-size:36px;
 }
 
 nav a{
-margin-left:8px;
 font-size:13px;
+margin-left:8px;
 }
-
 }
-
 </style>
 </head>
 
@@ -188,7 +186,7 @@ Welcome to <span>Bhana Digital</span>
 </h1>
 
 <p>
-Shop smart. Discover useful products & best deals.
+Shop smart. Discover useful products and best online deals.
 </p>
 
 <a href="#products" class="btn">
@@ -208,17 +206,36 @@ Shop Now
 <div class="product">
 
 <div class="photo">
-🛍️
+🍼
 </div>
 
-<h3>Product 1</h3>
+<h3>Baby Products</h3>
 
 <p>
-Coming Soon
+Useful baby products at best prices.
 </p>
 
 <a href="#" class="buy">
-View Product
+Buy Now
+</a>
+
+</div>
+
+
+<div class="product">
+
+<div class="photo">
+🏠
+</div>
+
+<h3>Home Products</h3>
+
+<p>
+Useful and affordable products for your home.
+</p>
+
+<a href="#" class="buy">
+Buy Now
 </a>
 
 </div>
@@ -230,33 +247,14 @@ View Product
 🔥
 </div>
 
-<h3>Best Deal</h3>
+<h3>Best Deals</h3>
 
 <p>
-Coming Soon
+Special online deals and offers coming soon.
 </p>
 
 <a href="#" class="buy">
 View Deal
-</a>
-
-</div>
-
-
-<div class="product">
-
-<div class="photo">
-⭐
-</div>
-
-<h3>Popular Product</h3>
-
-<p>
-Coming Soon
-</p>
-
-<a href="#" class="buy">
-View Product
 </a>
 
 </div>
@@ -274,7 +272,7 @@ Bhana Digital Platform
 </h2>
 
 <p>
-Your simple digital shopping platform for products, deals and online shopping.
+Your digital shopping platform for products, deals and online shopping.
 </p>
 
 </section>
