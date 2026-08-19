@@ -3,277 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Bhana Digital Platform</title>
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-
-body{
-font-family:Arial,sans-serif;
-background:#f7f8fc;
-color:#171717;
-}
-
-header{
-background:#fff;
-padding:18px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:10;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
-}
-
-.logo{
-font-size:25px;
-font-weight:bold;
-color:#6c4cff;
-}
-
-nav a{
-text-decoration:none;
-color:#222;
-margin-left:20px;
-font-weight:bold;
-}
-
-.hero{
-padding:75px 7%;
-text-align:center;
-background:linear-gradient(135deg,#eeeaff,#fff);
-}
-
-.hero h1{
-font-size:46px;
-margin-bottom:15px;
-}
-
-.hero h1 span{
-color:#6c4cff;
-}
-
-.hero p{
-font-size:18px;
-color:#666;
-margin-bottom:25px;
-}
-
-.btn{
-display:inline-block;
-padding:13px 23px;
-background:#6c4cff;
-color:white;
-text-decoration:none;
-border:0;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
-}
-
-.section{
-padding:55px 7%;
-}
-
-.section h2{
-font-size:32px;
-text-align:center;
-margin-bottom:30px;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:22px;
-}
-
-.product{
-background:white;
-padding:20px;
-border-radius:18px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-text-align:center;
-}
-
-.photo{
-height:170px;
-background:#eee;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-overflow:hidden;
-margin-bottom:15px;
-}
-
-.photo img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.product h3{
-font-size:20px;
-margin-bottom:8px;
-}
-
-.price{
-font-size:20px;
-font-weight:bold;
-color:#6c4cff;
-margin-bottom:8px;
-}
-
-.product p{
-color:#666;
-margin-bottom:15px;
-line-height:1.5;
-}
-
-.buy{
-display:inline-block;
-padding:10px 18px;
-background:#171717;
-color:white;
-text-decoration:none;
-border-radius:8px;
-}
-
-.admin{
-background:#fff;
-margin:30px 7%;
-padding:30px;
-border-radius:18px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.admin h2{
-margin-bottom:20px;
-}
-
-input,textarea{
-width:100%;
-padding:13px;
-margin-bottom:12px;
-border:1px solid #ddd;
-border-radius:9px;
-font-size:15px;
-}
-
-textarea{
-height:90px;
-resize:vertical;
-}
-
-.hidden{
-display:none;
-}
-
-.message{
-margin-top:15px;
-font-weight:bold;
-}
-
-.about{
-background:#151515;
-color:white;
-text-align:center;
-padding:50px 7%;
-}
-
-.about p{
-color:#ccc;
-margin-top:10px;
-}
-
-footer{
-background:white;
-text-align:center;
-padding:25px;
-color:#777;
-}
-
-@media(max-width:600px){
-.hero h1{font-size:36px}
-nav a{font-size:13px;margin-left:8px}
-}
+body{font-family:Arial,sans-serif;background:#f7f8fc;color:#171717}
+header{background:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.logo{font-size:25px;font-weight:bold;color:#6c4cff}
+nav a{text-decoration:none;color:#222;margin-left:20px;font-weight:bold}
+.hero{padding:75px 7%;text-align:center;background:linear-gradient(135deg,#eeeaff,#fff)}
+.hero h1{font-size:46px;margin-bottom:15px}
+.hero h1 span{color:#6c4cff}
+.hero p{font-size:18px;color:#666;margin-bottom:25px}
+.btn{display:inline-block;padding:13px 23px;background:#6c4cff;color:#fff;text-decoration:none;border:0;border-radius:10px;font-weight:bold;cursor:pointer}
+.section{padding:55px 7%}
+.section h2{text-align:center;font-size:32px;margin-bottom:30px}
+.filters{text-align:center;margin-bottom:25px}
+.filters button{padding:9px 15px;margin:4px;border:1px solid #ddd;background:#fff;border-radius:8px;cursor:pointer}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.product{background:#fff;padding:20px;border-radius:18px;box-shadow:0 5px 20px rgba(0,0,0,.08);text-align:center}
+.photo{height:170px;background:#eee;border-radius:12px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:15px;font-size:50px}
+.photo img{width:100%;height:100%;object-fit:cover}
+.product h3{font-size:20px;margin-bottom:7px}
+.category{font-size:13px;color:#777;margin-bottom:8px}
+.price{font-size:20px;font-weight:bold;color:#6c4cff;margin-bottom:8px}
+.product p{color:#666;margin-bottom:15px;line-height:1.5}
+.buy{display:inline-block;padding:10px 18px;background:#171717;color:white;text-decoration:none;border-radius:8px}
+.admin{background:#fff;margin:30px 7%;padding:30px;border-radius:18px;box-shadow:0 5px 20px rgba(0,0,0,.08)}
+.admin h2{margin-bottom:20px}
+input,textarea,select{width:100%;padding:13px;margin-bottom:12px;border:1px solid #ddd;border-radius:9px;font-size:15px}
+textarea{height:90px;resize:vertical}
+.hidden{display:none}
+.message{margin-top:15px;font-weight:bold}
+.admin-products{margin-top:30px}
+.admin-item{display:flex;justify-content:space-between;align-items:center;padding:12px;border-bottom:1px solid #eee;gap:10px}
+.delete{background:#e53935;color:white;border:0;padding:8px 12px;border-radius:7px;cursor:pointer}
+.about{background:#151515;color:white;text-align:center;padding:50px 7%}
+.about p{color:#ccc;margin-top:10px}
+footer{text-align:center;padding:25px;background:#fff;color:#777}
+@media(max-width:600px){.hero h1{font-size:36px}nav a{font-size:13px;margin-left:8px}.admin-item{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 
 <body>
 
 <header>
-
 <div class="logo">Bhana Digital</div>
-
 <nav>
 <a href="#home">Home</a>
 <a href="#products">Products</a>
 <a href="#admin">Admin</a>
 <a href="#about">About</a>
 </nav>
-
 </header>
 
-
 <section class="hero" id="home">
-
-<h1>
-Welcome to <span>Bhana Digital</span>
-</h1>
-
-<p>
-Shop smart. Discover useful products and best online deals.
-</p>
-
-<a href="#products" class="btn">
-Shop Now
-</a>
-
+<h1>Welcome to <span>Bhana Digital</span></h1>
+<p>Shop smart. Discover useful products and best online deals.</p>
+<a href="#products" class="btn">Shop Now</a>
 </section>
-
 
 <section class="section" id="products">
-
 <h2>🔥 Products</h2>
 
-<div class="products" id="productList">
-
-<p>Loading products...</p>
-
+<div class="filters">
+<button onclick="showAll()">All</button>
+<button onclick="filterProducts('Baby')">Baby</button>
+<button onclick="filterProducts('Home')">Home</button>
+<button onclick="filterProducts('Deals')">Deals</button>
 </div>
 
+<div class="products" id="productList">
+<p>Loading products...</p>
+</div>
 </section>
-
 
 <section class="admin" id="admin">
 
 <h2>🔐 Admin Panel</h2>
 
 <div id="loginBox">
-
 <input type="email" id="email" placeholder="Admin Email">
-
 <input type="password" id="password" placeholder="Password">
-
-<button class="btn" onclick="loginAdmin()">
-Login
-</button>
-
+<button class="btn" onclick="loginAdmin()">Login</button>
 <p id="loginMessage" class="message"></p>
-
 </div>
-
 
 <div id="adminPanel" class="hidden">
 
-<h3 style="margin-bottom:15px">
-➕ Add New Product
-</h3>
+<h3 style="margin-bottom:15px">➕ Add New Product</h3>
 
 <input id="productName" placeholder="Product Name">
+
+<select id="productCategory">
+<option value="Baby">Baby</option>
+<option value="Home">Home</option>
+<option value="Deals">Deals</option>
+<option value="Other">Other</option>
+</select>
 
 <input id="productPrice" placeholder="Price e.g. ₹499">
 
@@ -283,36 +110,26 @@ Login
 
 <input id="productLink" placeholder="Buy Link">
 
-<button class="btn" onclick="addProduct()">
-Publish Product
-</button>
+<button class="btn" onclick="addProduct()">Publish Product</button>
 
-<button class="btn" onclick="logoutAdmin()" style="background:#222;margin-left:8px">
-Logout
-</button>
+<button class="btn" onclick="logoutAdmin()" style="background:#222;margin-left:8px">Logout</button>
 
 <p id="adminMessage" class="message"></p>
 
+<div class="admin-products">
+<h3 style="margin-bottom:15px">🗑️ Manage Products</h3>
+<div id="adminProductList"></div>
 </div>
 
+</div>
 </section>
-
 
 <section class="about" id="about">
-
 <h2>Bhana Digital Platform</h2>
-
-<p>
-Your digital shopping platform for products, deals and online shopping.
-</p>
-
+<p>Your digital shopping platform for products, deals and online shopping.</p>
 </section>
 
-
-<footer>
-© 2026 Bhana Digital Platform
-</footer>
-
+<footer>© 2026 Bhana Digital Platform</footer>
 
 <script type="module">
 
@@ -339,158 +156,84 @@ orderBy
 }
 from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-
-const firebaseConfig = {
-
+const firebaseConfig={
 apiKey:"AIzaSyBgrwNIEpmOBhLtWn3XQJHMcc6Eo_PeNcs",
-
 authDomain:"bhana-digital-platform.firebaseapp.com",
-
 projectId:"bhana-digital-platform",
-
 storageBucket:"bhana-digital-platform.firebasestorage.app",
-
 messagingSenderId:"955197910031",
-
 appId:"1:955197910031:web:1cf83de6224ec156c9877a"
-
 };
 
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app);
+const db=getFirestore(app);
 
-const app = initializeApp(firebaseConfig);
+const ADMIN_UID="DVna4VZrXbSAoytBI5CnV7SBGV22";
 
-const auth = getAuth(app);
+let allProducts=[];
 
-const db = getFirestore(app);
-
-
-const ADMIN_UID =
-"DVna4VZrXbSAoytBI5CnV7SBGV22";
-
-
-window.loginAdmin = async function(){
-
-const email =
-document.getElementById("email").value;
-
-const password =
-document.getElementById("password").value;
+window.loginAdmin=async function(){
+const email=document.getElementById("email").value;
+const password=document.getElementById("password").value;
 
 try{
-
-await signInWithEmailAndPassword(
-auth,
-email,
-password
-);
-
-document.getElementById("loginMessage")
-.innerText="Login successful ✅";
-
+await signInWithEmailAndPassword(auth,email,password);
+document.getElementById("loginMessage").innerText="Login successful ✅";
 }catch(error){
-
-document.getElementById("loginMessage")
-.innerText="Login failed ❌ Check email/password.";
-
+document.getElementById("loginMessage").innerText="Login failed ❌";
 }
-
 };
 
-
-window.logoutAdmin = async function(){
-
+window.logoutAdmin=async function(){
 await signOut(auth);
-
 };
 
-
-onAuthStateChanged(auth,(user)=>{
-
-if(user && user.uid === ADMIN_UID){
-
-document.getElementById("loginBox")
-.classList.add("hidden");
-
-document.getElementById("adminPanel")
-.classList.remove("hidden");
-
+onAuthStateChanged(auth,user=>{
+if(user && user.uid===ADMIN_UID){
+document.getElementById("loginBox").classList.add("hidden");
+document.getElementById("adminPanel").classList.remove("hidden");
+loadProducts();
 }else{
-
-document.getElementById("loginBox")
-.classList.remove("hidden");
-
-document.getElementById("adminPanel")
-.classList.add("hidden");
-
+document.getElementById("loginBox").classList.remove("hidden");
+document.getElementById("adminPanel").classList.add("hidden");
 }
-
 });
 
+window.addProduct=async function(){
 
-window.addProduct = async function(){
+const user=auth.currentUser;
 
-const user = auth.currentUser;
-
-if(!user || user.uid !== ADMIN_UID){
-
+if(!user || user.uid!==ADMIN_UID){
 alert("Admin login required.");
-
 return;
-
 }
 
-
-const name =
-document.getElementById("productName").value.trim();
-
-const price =
-document.getElementById("productPrice").value.trim();
-
-const image =
-document.getElementById("productImage").value.trim();
-
-const description =
-document.getElementById("productDescription").value.trim();
-
-const link =
-document.getElementById("productLink").value.trim();
-
+const name=document.getElementById("productName").value.trim();
+const category=document.getElementById("productCategory").value;
+const price=document.getElementById("productPrice").value.trim();
+const image=document.getElementById("productImage").value.trim();
+const description=document.getElementById("productDescription").value.trim();
+const link=document.getElementById("productLink").value.trim();
 
 if(!name || !price || !description || !link){
-
-document.getElementById("adminMessage")
-.innerText="Please fill all required fields.";
-
+document.getElementById("adminMessage").innerText="Please fill required fields.";
 return;
-
 }
-
 
 try{
 
-await addDoc(
-collection(db,"products"),
-{
-
-name:name,
-
-price:price,
-
-image:image,
-
-description:description,
-
-link:link,
-
+await addDoc(collection(db,"products"),{
+name,
+category,
+price,
+image,
+description,
+link,
 createdAt:Date.now()
+});
 
-}
-);
-
-
-document.getElementById("adminMessage")
-.innerText="Product published successfully ✅";
-
+document.getElementById("adminMessage").innerText="Product published successfully ✅";
 
 document.getElementById("productName").value="";
 document.getElementById("productPrice").value="";
@@ -498,103 +241,138 @@ document.getElementById("productImage").value="";
 document.getElementById("productDescription").value="";
 document.getElementById("productLink").value="";
 
-
 loadProducts();
 
-
 }catch(error){
-
-document.getElementById("adminMessage")
-.innerText="Error: "+error.message;
-
+document.getElementById("adminMessage").innerText="Error: "+error.message;
 }
-
 };
-
 
 async function loadProducts(){
 
-const list =
-document.getElementById("productList");
-
-list.innerHTML="";
-
+const list=document.getElementById("productList");
+list.innerHTML="Loading...";
 
 try{
 
-const q =
-query(
-collection(db,"products"),
-orderBy("createdAt","desc")
-);
+const q=query(collection(db,"products"),orderBy("createdAt","desc"));
+const snapshot=await getDocs(q);
 
-const snapshot =
-await getDocs(q);
+allProducts=[];
 
+snapshot.forEach(item=>{
+allProducts.push({
+id:item.id,
+...item.data()
+});
+});
 
-if(snapshot.empty){
+renderProducts(allProducts);
+renderAdminProducts();
 
-list.innerHTML="<p>No products yet.</p>";
-
-return;
-
+}catch(error){
+list.innerHTML="<p>Unable to load products.</p>";
+}
 }
 
+function renderProducts(products){
 
-snapshot.forEach((item)=>{
+const list=document.getElementById("productList");
+list.innerHTML="";
 
-const p=item.data();
+if(products.length===0){
+list.innerHTML="<p>No products yet.</p>";
+return;
+}
+
+products.forEach(p=>{
 
 const card=document.createElement("div");
-
 card.className="product";
-
 
 let imageHTML="🛍️";
 
 if(p.image){
-
-imageHTML=
-`<img src="${p.image}" alt="${p.name}">`;
-
+imageHTML=`<img src="${p.image}" alt="${p.name}">`;
 }
 
-
 card.innerHTML=`
-
-<div class="photo">
-${imageHTML}
-</div>
-
+<div class="photo">${imageHTML}</div>
 <h3>${p.name}</h3>
-
-<div class="price">
-${p.price}
-</div>
-
+<div class="category">${p.category || "Other"}</div>
+<div class="price">${p.price}</div>
 <p>${p.description}</p>
-
-<a class="buy"
-href="${p.link}"
-target="_blank">
-Buy Now
-</a>
-
+<a class="buy" href="${p.link}" target="_blank">Buy Now</a>
 `;
 
 list.appendChild(card);
 
 });
+}
+
+function renderAdminProducts(){
+
+const list=document.getElementById("adminProductList");
+list.innerHTML="";
+
+allProducts.forEach(p=>{
+
+const item=document.createElement("div");
+item.className="admin-item";
+
+item.innerHTML=`
+<div>
+<strong>${p.name}</strong><br>
+<small>${p.price} • ${p.category || "Other"}</small>
+</div>
+<button class="delete" onclick="deleteProduct('${p.id}')">Delete</button>
+`;
+
+list.appendChild(item);
+
+});
+}
+
+window.deleteProduct=async function(id){
+
+const user=auth.currentUser;
+
+if(!user || user.uid!==ADMIN_UID){
+alert("Admin access required.");
+return;
+}
+
+if(!confirm("Delete this product?")){
+return;
+}
+
+try{
+
+await deleteDoc(doc(db,"products",id));
+
+document.getElementById("adminMessage").innerText="Product deleted ✅";
+
+loadProducts();
 
 }catch(error){
 
-list.innerHTML=
-"<p>Unable to load products.</p>";
+document.getElementById("adminMessage").innerText="Delete failed.";
 
 }
+};
 
-}
+window.showAll=function(){
+renderProducts(allProducts);
+};
 
+window.filterProducts=function(category){
+
+const filtered=allProducts.filter(
+p=>p.category===category
+);
+
+renderProducts(filtered);
+};
 
 loadProducts();
 
