@@ -16,7 +16,7 @@ color:#171717;
 }
 
 header{
-background:white;
+background:#fff;
 padding:18px 6%;
 display:flex;
 justify-content:space-between;
@@ -41,13 +41,13 @@ font-weight:bold;
 }
 
 .hero{
-padding:85px 7%;
+padding:75px 7%;
 text-align:center;
 background:linear-gradient(135deg,#eeeaff,#fff);
 }
 
 .hero h1{
-font-size:48px;
+font-size:46px;
 margin-bottom:15px;
 }
 
@@ -63,16 +63,18 @@ margin-bottom:25px;
 
 .btn{
 display:inline-block;
-padding:14px 25px;
+padding:13px 23px;
 background:#6c4cff;
 color:white;
 text-decoration:none;
+border:0;
 border-radius:10px;
 font-weight:bold;
+cursor:pointer;
 }
 
 .section{
-padding:60px 7%;
+padding:55px 7%;
 }
 
 .section h2{
@@ -96,18 +98,31 @@ text-align:center;
 }
 
 .photo{
-height:160px;
-background:#eeeeee;
+height:170px;
+background:#eee;
 border-radius:12px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:55px;
+overflow:hidden;
 margin-bottom:15px;
 }
 
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
 .product h3{
-font-size:21px;
+font-size:20px;
+margin-bottom:8px;
+}
+
+.price{
+font-size:20px;
+font-weight:bold;
+color:#6c4cff;
 margin-bottom:8px;
 }
 
@@ -119,27 +134,58 @@ line-height:1.5;
 
 .buy{
 display:inline-block;
-padding:11px 20px;
+padding:10px 18px;
 background:#171717;
 color:white;
 text-decoration:none;
 border-radius:8px;
 }
 
+.admin{
+background:#fff;
+margin:30px 7%;
+padding:30px;
+border-radius:18px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.admin h2{
+margin-bottom:20px;
+}
+
+input,textarea{
+width:100%;
+padding:13px;
+margin-bottom:12px;
+border:1px solid #ddd;
+border-radius:9px;
+font-size:15px;
+}
+
+textarea{
+height:90px;
+resize:vertical;
+}
+
+.hidden{
+display:none;
+}
+
+.message{
+margin-top:15px;
+font-weight:bold;
+}
+
 .about{
 background:#151515;
 color:white;
 text-align:center;
-padding:55px 7%;
-}
-
-.about h2{
-margin-bottom:12px;
+padding:50px 7%;
 }
 
 .about p{
 color:#ccc;
-line-height:1.6;
+margin-top:10px;
 }
 
 footer{
@@ -150,14 +196,8 @@ color:#777;
 }
 
 @media(max-width:600px){
-.hero h1{
-font-size:36px;
-}
-
-nav a{
-font-size:13px;
-margin-left:8px;
-}
+.hero h1{font-size:36px}
+nav a{font-size:13px;margin-left:8px}
 }
 </style>
 </head>
@@ -166,13 +206,12 @@ margin-left:8px;
 
 <header>
 
-<div class="logo">
-Bhana Digital
-</div>
+<div class="logo">Bhana Digital</div>
 
 <nav>
 <a href="#home">Home</a>
 <a href="#products">Products</a>
+<a href="#admin">Admin</a>
 <a href="#about">About</a>
 </nav>
 
@@ -198,67 +237,61 @@ Shop Now
 
 <section class="section" id="products">
 
-<h2>🔥 Featured Products</h2>
+<h2>🔥 Products</h2>
 
-<div class="products">
+<div class="products" id="productList">
 
-
-<div class="product">
-
-<div class="photo">
-🍼
-</div>
-
-<h3>Baby Products</h3>
-
-<p>
-Useful baby products at best prices.
-</p>
-
-<a href="#" class="buy">
-Buy Now
-</a>
+<p>Loading products...</p>
 
 </div>
 
+</section>
 
-<div class="product">
 
-<div class="photo">
-🏠
-</div>
+<section class="admin" id="admin">
 
-<h3>Home Products</h3>
+<h2>🔐 Admin Panel</h2>
 
-<p>
-Useful and affordable products for your home.
-</p>
+<div id="loginBox">
 
-<a href="#" class="buy">
-Buy Now
-</a>
+<input type="email" id="email" placeholder="Admin Email">
+
+<input type="password" id="password" placeholder="Password">
+
+<button class="btn" onclick="loginAdmin()">
+Login
+</button>
+
+<p id="loginMessage" class="message"></p>
 
 </div>
 
 
-<div class="product">
+<div id="adminPanel" class="hidden">
 
-<div class="photo">
-🔥
-</div>
+<h3 style="margin-bottom:15px">
+➕ Add New Product
+</h3>
 
-<h3>Best Deals</h3>
+<input id="productName" placeholder="Product Name">
 
-<p>
-Special online deals and offers coming soon.
-</p>
+<input id="productPrice" placeholder="Price e.g. ₹499">
 
-<a href="#" class="buy">
-View Deal
-</a>
+<input id="productImage" placeholder="Product Image URL">
 
-</div>
+<textarea id="productDescription" placeholder="Product Description"></textarea>
 
+<input id="productLink" placeholder="Buy Link">
+
+<button class="btn" onclick="addProduct()">
+Publish Product
+</button>
+
+<button class="btn" onclick="logoutAdmin()" style="background:#222;margin-left:8px">
+Logout
+</button>
+
+<p id="adminMessage" class="message"></p>
 
 </div>
 
@@ -267,9 +300,7 @@ View Deal
 
 <section class="about" id="about">
 
-<h2>
-Bhana Digital Platform
-</h2>
+<h2>Bhana Digital Platform</h2>
 
 <p>
 Your digital shopping platform for products, deals and online shopping.
@@ -279,10 +310,295 @@ Your digital shopping platform for products, deals and online shopping.
 
 
 <footer>
-
 © 2026 Bhana Digital Platform
-
 </footer>
+
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getAuth,
+signInWithEmailAndPassword,
+onAuthStateChanged,
+signOut
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+getFirestore,
+collection,
+addDoc,
+getDocs,
+deleteDoc,
+doc,
+query,
+orderBy
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+
+const firebaseConfig = {
+
+apiKey:"AIzaSyBgrwNIEpmOBhLtWn3XQJHMcc6Eo_PeNcs",
+
+authDomain:"bhana-digital-platform.firebaseapp.com",
+
+projectId:"bhana-digital-platform",
+
+storageBucket:"bhana-digital-platform.firebasestorage.app",
+
+messagingSenderId:"955197910031",
+
+appId:"1:955197910031:web:1cf83de6224ec156c9877a"
+
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+
+const ADMIN_UID =
+"DVna4VZrXbSAoytBI5CnV7SBGV22";
+
+
+window.loginAdmin = async function(){
+
+const email =
+document.getElementById("email").value;
+
+const password =
+document.getElementById("password").value;
+
+try{
+
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+document.getElementById("loginMessage")
+.innerText="Login successful ✅";
+
+}catch(error){
+
+document.getElementById("loginMessage")
+.innerText="Login failed ❌ Check email/password.";
+
+}
+
+};
+
+
+window.logoutAdmin = async function(){
+
+await signOut(auth);
+
+};
+
+
+onAuthStateChanged(auth,(user)=>{
+
+if(user && user.uid === ADMIN_UID){
+
+document.getElementById("loginBox")
+.classList.add("hidden");
+
+document.getElementById("adminPanel")
+.classList.remove("hidden");
+
+}else{
+
+document.getElementById("loginBox")
+.classList.remove("hidden");
+
+document.getElementById("adminPanel")
+.classList.add("hidden");
+
+}
+
+});
+
+
+window.addProduct = async function(){
+
+const user = auth.currentUser;
+
+if(!user || user.uid !== ADMIN_UID){
+
+alert("Admin login required.");
+
+return;
+
+}
+
+
+const name =
+document.getElementById("productName").value.trim();
+
+const price =
+document.getElementById("productPrice").value.trim();
+
+const image =
+document.getElementById("productImage").value.trim();
+
+const description =
+document.getElementById("productDescription").value.trim();
+
+const link =
+document.getElementById("productLink").value.trim();
+
+
+if(!name || !price || !description || !link){
+
+document.getElementById("adminMessage")
+.innerText="Please fill all required fields.";
+
+return;
+
+}
+
+
+try{
+
+await addDoc(
+collection(db,"products"),
+{
+
+name:name,
+
+price:price,
+
+image:image,
+
+description:description,
+
+link:link,
+
+createdAt:Date.now()
+
+}
+);
+
+
+document.getElementById("adminMessage")
+.innerText="Product published successfully ✅";
+
+
+document.getElementById("productName").value="";
+document.getElementById("productPrice").value="";
+document.getElementById("productImage").value="";
+document.getElementById("productDescription").value="";
+document.getElementById("productLink").value="";
+
+
+loadProducts();
+
+
+}catch(error){
+
+document.getElementById("adminMessage")
+.innerText="Error: "+error.message;
+
+}
+
+};
+
+
+async function loadProducts(){
+
+const list =
+document.getElementById("productList");
+
+list.innerHTML="";
+
+
+try{
+
+const q =
+query(
+collection(db,"products"),
+orderBy("createdAt","desc")
+);
+
+const snapshot =
+await getDocs(q);
+
+
+if(snapshot.empty){
+
+list.innerHTML="<p>No products yet.</p>";
+
+return;
+
+}
+
+
+snapshot.forEach((item)=>{
+
+const p=item.data();
+
+const card=document.createElement("div");
+
+card.className="product";
+
+
+let imageHTML="🛍️";
+
+if(p.image){
+
+imageHTML=
+`<img src="${p.image}" alt="${p.name}">`;
+
+}
+
+
+card.innerHTML=`
+
+<div class="photo">
+${imageHTML}
+</div>
+
+<h3>${p.name}</h3>
+
+<div class="price">
+${p.price}
+</div>
+
+<p>${p.description}</p>
+
+<a class="buy"
+href="${p.link}"
+target="_blank">
+Buy Now
+</a>
+
+`;
+
+list.appendChild(card);
+
+});
+
+}catch(error){
+
+list.innerHTML=
+"<p>Unable to load products.</p>";
+
+}
+
+}
+
+
+loadProducts();
+
+</script>
 
 </body>
 </html>
